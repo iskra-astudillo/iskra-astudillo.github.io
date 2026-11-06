@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Open source · Iskra Astudillo</title>
+<meta name="description" content="Public repositories by Iskra Astudillo: bugclass-detectors, answerbeacon-check, rulesmith, and three product case studies.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Source+Sans+3:wght@400;600&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">Iskra Astudillo</a>
+    <nav class="main" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="companies.html">Companies</a>
+      <a href="systems.html">Systems</a>
+      <a href="case-studies.html">Case studies</a>
+      <a href="open-source.html" aria-current="page">Open source</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div>
+    <p class="kicker">Open source</p>
+    <h1>The public repositories</h1>
+  </div>
+  <p class="lede">Three tools from my own build pipeline, released under MIT, plus written case studies for three products. I specified each one and reviewed what the agents built; all of it lives at <a href="https://github.com/iskra-astudillo">github.com/iskra-astudillo</a>.</p>
+
+  <h2>Tools</h2>
+  <ul class="rows">
+    <li>
+      <div><h3><a href="https://github.com/iskra-astudillo/bugclass-detectors">bugclass-detectors</a></h3><span class="meta">Static checks · CI gate · v0.1.0 · MIT · Python standard library</span></div>
+      <p>A parser-based scanner for five silent-failure bug classes that AI-written code keeps reintroducing: swallowed write errors, undefined names on rare paths, inline secrets, safety flags that fail open, and secrets captured once and never re-read. Grep could not find these reliably, so it reads the syntax tree instead. A high finding fails the build. Hosted version at <a href="https://bugclass.eliteaiempire.com">bugclass.eliteaiempire.com</a>.</p>
+    </li>
+    <li>
+      <div><h3><a href="https://github.com/iskra-astudillo/answerbeacon-check">answerbeacon-check</a></h3><span class="meta">CLI + MCP server · v0.1.0 · MIT · Python standard library</span></div>
+      <p>Scores a web page on twenty elements that AI search engines read, shows the evidence, and writes the fix for each miss. It also runs as a server so an AI agent can call it. The first real run was against my own company site, and the fixes it wrote shipped the same day.</p>
+    </li>
+    <li>
+      <div><h3><a href="https://github.com/iskra-astudillo/rulesmith">rulesmith</a></h3><span class="meta">Config generator · v0.1.0 · MIT · Python standard library</span></div>
+      <p>Write AI coding rules once and generate the rule files that each coding tool expects, then fail CI when they drift apart. One source of truth for the rules, whatever tool each engineer or agent uses. Hosted at <a href="https://rulesmith.eliteaiempire.com">rulesmith.eliteaiempire.com</a>.</p>
+    </li>
+  </ul>
+
+  <h2>Case studies</h2>
+  <p>Each documents the problem, the design and the engineering decisions, under a CC BY 4.0 licence. They are the three places a hiring team can read my design reasoning without a meeting.</p>
+  <ul class="rows">
+    <li>
+      <div><h3><a href="https://github.com/iskra-astudillo/governed-agents-case-study">governed-agents-case-study</a></h3><span class="meta">CC BY 4.0</span></div>
+      <p>AI agents a business can audit: permission per action, a person approves anything irreversible, every action on a hash-chained record, budgets as hard limits, fail closed. The product is <a href="https://eliteagenticsolutions.com">Elite Agentic Solutions</a>; the same principles run my own build pipeline.</p>
+    </li>
+    <li>
+      <div><h3><a href="https://github.com/iskra-astudillo/cohostbnb-case-study">cohostbnb-case-study</a></h3><span class="meta">CC BY 4.0</span></div>
+      <p>An operations workspace for short-term rentals and small lodging: guest replies, room preparation and maintenance in one place, with AI drafts a person approves before anything reaches a guest. Drawn from fifteen years of answering those messages myself.</p>
+    </li>
+    <li>
+      <div><h3><a href="https://github.com/iskra-astudillo/clipwright-case-study">clipwright-case-study</a></h3><span class="meta">CC BY 4.0</span></div>
+      <p>A video clipping service that checks rights before it processes anything. It refuses by default, accepts uploads and never links, shows why each moment was picked, and publishes one clip at a time to the user's own account.</p>
+    </li>
+  </ul>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>Iskra Astudillo · Silicon Valley, California · updated November 2026</span>
+    <span><a href="https://github.com/iskra-astudillo">GitHub</a> · <a href="https://www.linkedin.com/in/iskra-astudillo-7b76463">LinkedIn</a> · <a href="https://eliteaiempire.com">Elite AI Holdings</a></span>
+  </div>
+</footer>
+</body>
+</html>

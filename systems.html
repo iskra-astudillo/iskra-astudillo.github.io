@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Systems · Iskra Astudillo</title>
+<meta name="description" content="How the agent runner behind Elite AI Holdings is governed: a written brief, an acceptance test, an allow-list, a hard budget, review with a human release call, and a hash-chained audit trail.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Source+Sans+3:wght@400;600&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">Iskra Astudillo</a>
+    <nav class="main" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="companies.html">Companies</a>
+      <a href="systems.html" aria-current="page">Systems</a>
+      <a href="case-studies.html">Case studies</a>
+      <a href="open-source.html">Open source</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div>
+    <p class="kicker">Systems</p>
+    <h1>How the agent runner is governed</h1>
+  </div>
+  <p class="lede">AI coding agents wrote the code behind my 45 products. I designed everything around them: the brief, the limits, the review and the decision to ship. Six controls, in the order a job meets them, and a job can be refused at any one of them.</p>
+
+  <ol class="controls">
+    <li><b>Written brief.</b> Every job starts from a document I wrote, never from a chat: the goal, the scope and the budget.</li>
+    <li><b>Acceptance test.</b> The brief carries the test that defines done. A job is finished when the test passes, not when the agent says so.</li>
+    <li><b>Allow-list.</b> Each agent runs with a short list of permitted actions. Anything not on the list is refused, not asked about, and a person approves anything irreversible.</li>
+    <li><b>Hard budget.</b> A job takes its budget before it starts; when the budget is spent, nothing new launches.</li>
+    <li><b>Review, then my release call.</b> Tests and a bug-class scan gate every change. Nothing ships without my decision.</li>
+    <li><b>Audit trail.</b> Every action, refusal and approval goes on an append-only, hash-chained record, so after an incident the log answers what ran, whether it was allowed and who signed off.</li>
+  </ol>
+
+  <figure>
+    <div class="scroll">
+    <svg viewBox="0 0 980 300" role="img" aria-labelledby="f1t">
+      <title id="f1t">Flow of one agent job: brief with acceptance test, budget, isolated run under an allow-list, automated review, human release, audit record.</title>
+      <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="svg-ink"/></marker></defs>
+      <g>
+        <rect x="10" y="40" width="140" height="64" rx="8" class="svg-box"/>
+        <text x="80" y="66" text-anchor="middle" class="svg-t">Written brief</text>
+        <text x="80" y="84" text-anchor="middle" class="svg-s">goal + scope</text>
+        <rect x="180" y="40" width="140" height="64" rx="8" class="svg-acc"/>
+        <text x="250" y="66" text-anchor="middle" class="svg-t">Acceptance test</text>
+        <text x="250" y="84" text-anchor="middle" class="svg-s">done is defined first</text>
+        <rect x="350" y="40" width="140" height="64" rx="8" class="svg-box"/>
+        <text x="420" y="66" text-anchor="middle" class="svg-t">Hard budget</text>
+        <text x="420" y="84" text-anchor="middle" class="svg-s">no budget, no start</text>
+        <rect x="520" y="40" width="140" height="64" rx="8" class="svg-acc"/>
+        <text x="590" y="60" text-anchor="middle" class="svg-t">Isolated run</text>
+        <text x="590" y="76" text-anchor="middle" class="svg-s">time limit,</text>
+        <text x="590" y="90" text-anchor="middle" class="svg-s">allow-list only</text>
+        <rect x="690" y="40" width="140" height="64" rx="8" class="svg-box"/>
+        <text x="760" y="66" text-anchor="middle" class="svg-t">Review</text>
+        <text x="760" y="84" text-anchor="middle" class="svg-s">tests + bug-class scan</text>
+        <rect x="860" y="40" width="110" height="64" rx="8" class="svg-acc"/>
+        <text x="915" y="66" text-anchor="middle" class="svg-t">My release call</text>
+        <text x="915" y="84" text-anchor="middle" class="svg-s">nothing ships without it</text>
+        <path d="M150 72 H178" class="svg-line" marker-end="url(#ar)"/>
+        <path d="M320 72 H348" class="svg-line" marker-end="url(#ar)"/>
+        <path d="M490 72 H518" class="svg-line" marker-end="url(#ar)"/>
+        <path d="M660 72 H688" class="svg-line" marker-end="url(#ar)"/>
+        <path d="M830 72 H858" class="svg-line" marker-end="url(#ar)"/>
+      </g>
+      <g>
+        <rect x="180" y="190" width="650" height="56" rx="8" class="svg-box" stroke-dasharray="5 4"/>
+        <text x="505" y="213" text-anchor="middle" class="svg-t">Audit trail (append-only, hash-chained)</text>
+        <text x="505" y="231" text-anchor="middle" class="svg-s">who asked, what ran, what was refused, who approved, what it cost</text>
+        <path d="M420 104 V188" class="svg-line" marker-end="url(#ar)"/>
+        <path d="M590 104 V188" class="svg-line" marker-end="url(#ar)"/>
+        <path d="M760 104 V188" class="svg-line" marker-end="url(#ar)"/>
+        <path d="M915 104 V218 H832" class="svg-line" marker-end="url(#ar)"/>
+      </g>
+      <g>
+        <text x="80" y="140" class="svg-s">A job is refused at:</text>
+        <text x="80" y="156" class="svg-s">no budget · budget spent · action not on the list ·</text>
+        <text x="80" y="172" class="svg-s">test or review fails · I say no</text>
+      </g>
+    </svg>
+    </div>
+    <figcaption>One agent job. The dashed box is the record every step writes to.</figcaption>
+  </figure>
+
+  <p>Every control is proven by planting the failure it exists to catch. A control nobody has seen fail is not counted.</p>
+
+  <h2>Scale and structure</h2>
+  <p>Since April 2026 the runner has completed more than 10,000 governed agent runs on two servers I manage. Those runs built the 45 products and keep them running. Across every logged session since July 2026 that is roughly 45 billion tokens of model context in more than 5,400 sessions.</p>
+  <p>Several coordinating sessions dispatch agents through one shared budget and one shared rulebook. Idle capacity flows to whichever line is busy, and a stalled job can never hold the others' budget.</p>
+
+  <div class="note"><p>The deeper write-up of the governance product, with the same principles stated for a customer's agents, is public: <a href="https://github.com/iskra-astudillo/governed-agents-case-study">governed-agents-case-study</a>.</p></div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>Iskra Astudillo · Silicon Valley, California · updated November 2026</span>
+    <span><a href="https://github.com/iskra-astudillo">GitHub</a> · <a href="https://www.linkedin.com/in/iskra-astudillo-7b76463">LinkedIn</a> · <a href="https://eliteaiempire.com">Elite AI Holdings</a></span>
+  </div>
+</footer>
+</body>
+</html>
